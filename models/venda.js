@@ -156,12 +156,18 @@ module.exports = class Venda {
 
     Venda.validar(venda, msg)
 
-    if (! venda.id_cliente)
+    if (!venda.id_cliente)
       msg.push('Cliente não informado.')
-    if (! venda.id_vendedor)
+    if (!venda.id_vendedor)
       msg.push('Vendedor não informado.')
-    if (! venda.id_plano_pag)
+    if (!venda.id_plano_pag)
       msg.push('Plano de pagamento não informado.')
+    if (!!venda.faturar) {
+      if (!venda.id_caixa)
+        msg.push('O ID do caixa não foi informado.')
+      if (!venda.id_op_com)
+        msg.push('O ID da operação comercial não foi informado.')
+    }
     if (msg.length > 0) 
       return {sucesso: false, erros: msg}
 
