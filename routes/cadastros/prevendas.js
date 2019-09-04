@@ -264,22 +264,9 @@ async function buscarPreVenda(req) {
  * @apiParam {String}   [id_obra]         ID da obra.
  * @apiParam {String}   [id_parceiro]     ID do parceiro (indicador).
  * @apiParam {String}   [obs]             Observações referentes a venda.
- * @apiParam {Boolean}  [faturar]         Indica se a pre-venda será imediatamente faturada.
- * @apiParam {String}   [id_op_com]       ID da operação comercial de venda.
- * @apiParam {String}   [id_caixa]        ID do caixa onde a pré-venda será faturada.
- * @apiParam {Object[]} [cartoes]         Array contendo a lista dos pagamentos via cartão de crédito/débito.
- * @apiParam {String}   cartoes.rede          Nome da rede do cartão.
- * @apiParam {String}   cartoes.data_hora     Data e hora da transação (ISO 8601).
- * @apiParam {String}   cartoes.nsu           NSU da transação.
- * @apiParam {String}   cartoes.autoriz       ID de autorização da transação.
- * @apiParam {String}   cartoes.tipo          Tipo da transação.
- * @apiParam {Number}   cartoes.valor         Valor da transação.
- * @apiParam {Number}   cartoes.parcelas      Número de parcelas de pagamento.
  *  
  * @apiSuccess {Boolean}  sucesso         Retorna sempre <code>true</code>.
  * @apiSuccess {String}   id_loja         ID da loja onde as pré-vendas foram geradas.
- * @apiSuccess {String}   [id_op_com]     ID da operação comercial (somente para pré-vendas faturadas)
- * @apiSuccess {String}   [num_venda]     Número da nota de venda (somente para pré-vendas faturadas)
  * @apiSuccess {Object[]} prevendas       Array contendo uma lista de objetos JSON das pré-vendas geradas.
  * @apiSuccess {String}   prevendas.numero         Número da pré-venda.
  * @apiSuccess {Number}   prevendas.vl_total       Valor total da pré-venda.
