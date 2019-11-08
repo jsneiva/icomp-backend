@@ -171,7 +171,7 @@ module.exports = class Venda {
         venda.cartao.kind,
         venda.cartao.reference,
         venda.cartao.amount,
-        venda.cartao.intallments,
+        venda.cartao.installments,
         venda.cartao.cardHolderName,
         venda.cartao.cardNumber,
         venda.cartao.expirationMonth,
