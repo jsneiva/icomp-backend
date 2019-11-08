@@ -178,9 +178,9 @@ module.exports = class Venda {
         venda.cartao.expirationYear,
         venda.cartao.securityCode
       )
-      if (not (await cartao.AutorizarTransacao()))
+      if (! await cartao.AutorizarTransacao())
         msg.push(cartao.respAutorizacao.returnMessage)
-      else if (not (await cartao.ConfirmarTransacao()))
+      else if (! await cartao.ConfirmarTransacao())
         msg.push(cartao.respConfirmacao.returnMessage)
       else {
         return {
