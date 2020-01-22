@@ -1,7 +1,5 @@
 const knex = require('../knex/knexload')
 
-const Cartao = require('../models/cartao')
-
 module.exports = class Venda {
 
   static async delete(data) {
@@ -164,31 +162,6 @@ module.exports = class Venda {
       msg.push('Vendedor não informado.')
     if (!venda.id_plano_pag)
       msg.push('Plano de pagamento não informado.')
-
-
-    if (msg.length === 0 && venda.cartao) {
-      let cartao = new Cartao(
-        venda.cartao.kind,
-        venda.cartao.reference,
-        venda.cartao.amount,
-        venda.cartao.installments,
-        venda.cartao.cardHolderName,
-        venda.cartao.cardNumber,
-        venda.cartao.expirationMonth,
-        venda.cartao.expirationYear,
-        venda.cartao.securityCode
-      )
-      if (! await cartao.AutorizarTransacao())
-        msg.push(cartao.respAutorizacao.returnMessage)
-      else if (! await cartao.ConfirmarTransacao())
-        msg.push(cartao.respConfirmacao.returnMessage)
-      else {
-        return {
-          sucesso: true,
-          ...cartao.respConfirmacao
-        }
-      }
-    }
 
     if (msg.length > 0) 
       return {sucesso: false, erros: msg}
