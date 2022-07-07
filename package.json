@@ -19,7 +19,7 @@
     "inscricaoestadual": "0.0.5",
     "jsonwebtoken": "^8.4.0",
     "knex": "^0.16.5",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "morgan": "^1.9.1",
     "pg": "^7.8.0"
   }
