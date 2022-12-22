@@ -17,7 +17,7 @@
     "express": "^4.16.4",
     "http-errors": "^1.7.1",
     "inscricaoestadual": "0.0.5",
-    "jsonwebtoken": "^8.4.0",
+    "jsonwebtoken": "^9.0.0",
     "knex": "^0.16.5",
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
