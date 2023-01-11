@@ -18,7 +18,7 @@
     "http-errors": "^1.7.1",
     "inscricaoestadual": "0.0.5",
     "jsonwebtoken": "^8.4.0",
-    "knex": "^0.16.5",
+    "knex": "^2.4.0",
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
     "pg": "^7.8.0"
